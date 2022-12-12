@@ -7,6 +7,7 @@
 }
 
 * {
+    box-sizing: border-box;
     font-family: Raleway, Arial, Helvetica, sans-serif;
     font-weight: 400;
     font-size: 16px;
@@ -17,10 +18,6 @@ body, h1, h2, h3, h4, p {
     margin: 0;
 }
 
-body {
-    padding: 0 50px;
-}
-
 h1, h2 {
     font-weight: 700;
     font-size: 22px;
@@ -28,7 +25,7 @@ h1, h2 {
 }
 
 h2 {
-    padding-bottom: 25px;
+    padding-bottom: 23px;
 }
 
 h3 {
@@ -48,11 +45,16 @@ i {
     color: var(--color-blue-dark);
 }
 
-/************************ Header *********************/
-
-.site-header {
+.site-header,
+main,
+.site-footer {
     max-width: 1400px;
     margin: auto;
+}
+
+/************************ HEADER ************************/
+
+.site-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -70,7 +72,7 @@ nav ul {
 }
 
 nav li {
-    padding: 46px 21px;
+    padding: 40px 21px;
     border-top: solid 2px transparent;
 }
 
@@ -87,20 +89,19 @@ nav li:hover a {
     color: var(--color-blue-dark);
 }
 
-/************************ Main *********************/
+/************************ MAIN *********************/
 
-main {
-    max-width: 1400px;
-    margin: auto;
-}
+
+/*============== Search section =============*/
 
 .search-section {
     width: 100%;
-    padding: 40px 5px;
+    margin-bottom: 40px;
+    padding-left: 5px;
 }
 
 h1 {
-    margin: 19px 0 8px 0;
+    margin: 23px 0 8px 0;
     padding: 0;
 }
 
@@ -120,9 +121,10 @@ fieldset.search-line {
 
 .search-line label i {
     width: 100%;
+    padding: 16px 15px 15px 18px;
     background: var(--color-grey);
     border-radius: 15px 0px 0px 15px;
-    padding: 16px;
+    font-size: 18px;
 }
 
 .search-line input {
@@ -213,10 +215,14 @@ fieldset.search-line {
     font-size: 10px;
 }
 
+
+/*========== Results section ============*/
+
 .offers-section {
     display: flex;
-    column-gap: 40px;
     justify-content: space-between;
+    column-gap: 40px;
+    margin-bottom: 60px;
 }
 
 .offers-section__lodging,
@@ -224,6 +230,7 @@ fieldset.search-line {
     background: var(--color-grey);
     border-radius: 20px;
     padding: 40px;
+    height: 626px;
 }
 
 .offers-section__lodging {
@@ -235,7 +242,6 @@ fieldset.search-line {
 }
 
 .cards {
-    margin-bottom: 40px;
     display:flex;
     flex-wrap: wrap;
     justify-content: space-between;
@@ -244,21 +250,19 @@ fieldset.search-line {
 
 .card {
     border-radius: 20px;
-    background-color: #fff;
-}
-
-.card--lodging {
-    width: 30%;
+    background: #fff;
+    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
 }
 
 .card__link {
     display: flex;
     flex-direction: column;
+    align-items: space-between;
 }
 
 .card__img {
     width: 100%;
-    max-height: 124px;
+    height: 124px;
     box-sizing: border-box;
     border: 5px solid #fff;
     border-radius: 20px 20px 0 0;
@@ -266,12 +270,61 @@ fieldset.search-line {
 }
 
 .card__infos {
-    padding: 4px 16px 16px 16px;
+    padding: 4px 16px 8px 16px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     row-gap: 9px;
 }
+
+.card__infos h3 {
+    padding-bottom: 9px;
+}
+
+.card__text p {
+    font-size: 14px;
+    line-height: 16px;
+}
+
+.stars i {
+    font-size: 12px;
+}
+
+.stars i:last-of-type {
+    color: var(--color-grey);
+}
+
+.cards--lodging {
+    margin-bottom: 40px;
+}
+
+.card--lodging {
+    width: 246px;
+}
+
+.cards--popular {
+    row-gap: 33px;
+}
+
+.card--popular {
+    width: 100%;
+}
+
+.card--popular .card__link {
+    display: flex;
+    flex-direction: row;
+}
+
+.card--popular .card__img {
+    width: 137px;
+    height: 144px;
+    border-radius: 20px 0 0 20px;
+}
+
+.card--popular .card__infos {
+    padding-top: 16px;
+}
+
 
 .afficher-plus {
     font-weight: 700;
@@ -285,9 +338,56 @@ fieldset.search-line {
 }
 
 
+/*=========== Activities section ==============*/
+
+.activities-section {
+    margin-bottom: 60px;
+}
+
+.card--activity {
+    width: 302px;
+    border: none;
+}
+
+.card--activity .card__link {
+    height: 100%;
+    justify-content: flex-start;
+}
+
+.card--activity .card__img {
+    height: 389px;
+    border: none;
+    object-fit: cover;
+}
+
+.card--activity h3 {
+    padding: 20px;
+}
+
 
 /************************ Footer *********************/
 
+.site-footer {
+    padding: 45px 70px;
+    background: var(--color-grey);
+    display: flex;
+    column-gap: 230px;
+}
 
+.site-footer h4 {
+    padding-bottom: 20px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 21px;
+}
+
+.site-footer ul {
+    margin: 0;
+    padding: 0;
+}
+
+.site-footer li {
+    padding-bottom: 12px;
+}
 
 /********************* Media Queries *******************/
