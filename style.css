@@ -1,17 +1,25 @@
-/************************ Global *********************/
+/************************************************************************/
+/****************************** Desktop *********************************/
+/************************************************************************/
+
+
+
+
+/******************************* GLOBAL *********************************/
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap');
 
 :root {
     --color-blue-dark: #0065FC;
     --color-blue-light: #DEEBFF;
     --color-grey: #f2f2f2;
+    font-family: Raleway, Arial, Helvetica, sans-serif;
+    font-weight: 400;
+    font-size: 16px;
 }
 
 * {
     box-sizing: border-box;
-    font-family: Raleway, Arial, Helvetica, sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 19px;
 }
 
 body, h1, h2, h3, h4, p {
@@ -20,8 +28,7 @@ body, h1, h2, h3, h4, p {
 
 h1, h2 {
     font-weight: 700;
-    font-size: 22px;
-    line-height: 26px;
+    font-size: 1.375em;
 }
 
 h2 {
@@ -29,6 +36,7 @@ h2 {
 }
 
 h3 {
+    font-size: 1em;
     font-weight: 700;
 }
 
@@ -46,13 +54,13 @@ i {
 }
 
 .site-header,
-main,
+.site-main,
 .site-footer {
     max-width: 1400px;
-    margin: auto;
+    margin: 0 50px;
 }
 
-/************************ HEADER ************************/
+/********************************** HEADER *****************************/
 
 .site-header {
     display: flex;
@@ -69,15 +77,12 @@ main,
 nav ul {
     margin: 0;
     display: flex;
+    column-gap: 25px;
 }
 
 nav li {
     padding: 40px 21px;
     border-top: solid 2px transparent;
-}
-
-nav li:first-of-type {
-    margin-right: 25px;
 }
 
 nav li:hover {
@@ -89,7 +94,7 @@ nav li:hover a {
     color: var(--color-blue-dark);
 }
 
-/************************ MAIN *********************/
+/********************************** MAIN ********************************/
 
 
 /*============== Search section =============*/
@@ -111,12 +116,12 @@ h1 {
 
 .search-section fieldset {
     border: none;
-    margin: 0 0 20px 0;
     padding: 0;
 }
 
-fieldset.search-line {
+.search-line {
     display: flex;
+    margin-bottom: 35px;
 }
 
 .search-line label i {
@@ -124,7 +129,7 @@ fieldset.search-line {
     padding: 16px 15px 15px 18px;
     background: var(--color-grey);
     border-radius: 15px 0px 0px 15px;
-    font-size: 18px;
+    font-size: 1.125em;
 }
 
 .search-line input {
@@ -132,7 +137,7 @@ fieldset.search-line {
     border-right: none;
     padding: 13px;
     font-weight: 700;
-    font-size: 18px;
+    font-size: 1.125em;
 }
 
 .search-line button {
@@ -142,8 +147,7 @@ fieldset.search-line {
     border-radius: 0px 15px 15px 0px;
     color: #fff;
     font-weight: 700;
-    font-size: 18px;
-    line-height: 21px;
+    font-size: 1.125em;
     text-align: center;
 }
 
@@ -163,33 +167,36 @@ fieldset.search-line {
 .filters ul,
 .filters li {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
+}
+
+.filters {
+    row-gap: 15px;
 }
 
 .filters h2 {
     margin: 0 35px 0 7px;
     padding: 0;
-    font-weight: 700;
-    font-size: 18px;
-    line-height: 21px;
+    font-size: 1.125em;
 }
 
 .filters ul {
     margin: 0;
     padding: 0;
+    column-gap: 36px;
+    row-gap: 15px;
 }
 
 .filters li {
     border: 2px solid #d9d9d9;
     border-radius: 25px;
-    margin-right: 48px;
     padding: 14px;
 }
 
 .filters p {
     font-weight: 700;
-    font-size: 17px;
-    line-height: 20px;
+    font-size: 1.1em;
 }
 
 .filters i {
@@ -202,6 +209,7 @@ fieldset.search-line {
 }
 
 .infos {
+    margin-top: 20px;
     padding: 10px 0;
     display: flex;
     align-items:center;
@@ -212,7 +220,7 @@ fieldset.search-line {
     padding: 7px 10px;
     border: 1px solid #d9d9d9;
     border-radius: 50%;
-    font-size: 10px;
+    font-size: 0.625em;
 }
 
 
@@ -221,8 +229,6 @@ fieldset.search-line {
 .offers-section {
     display: flex;
     justify-content: space-between;
-    column-gap: 40px;
-    margin-bottom: 60px;
 }
 
 .offers-section__lodging,
@@ -230,15 +236,14 @@ fieldset.search-line {
     background: var(--color-grey);
     border-radius: 20px;
     padding: 40px;
-    height: 626px;
 }
 
 .offers-section__lodging {
-    width: 880px;
+    width: 65%;
 }
 
 .offers-section__popular {
-    width: 420px;
+    width: 32%;
 }
 
 .cards {
@@ -250,31 +255,31 @@ fieldset.search-line {
 
 .card {
     border-radius: 20px;
+    overflow:hidden;
     background: #fff;
+    border: 5px solid #fff;
     filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
 }
 
 .card__link {
     display: flex;
     flex-direction: column;
-    align-items: space-between;
+    height: 100%;
 }
 
 .card__img {
     width: 100%;
     height: 124px;
-    box-sizing: border-box;
-    border: 5px solid #fff;
-    border-radius: 20px 20px 0 0;
-    object-fit: cover;
+    object-fit:cover;
 }
 
 .card__infos {
-    padding: 4px 16px 8px 16px;
+    padding: 8px 12px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     row-gap: 9px;
+    height: 100%;
 }
 
 .card__infos h3 {
@@ -282,12 +287,11 @@ fieldset.search-line {
 }
 
 .card__text p {
-    font-size: 14px;
-    line-height: 16px;
+    font-size: 0.875em;
 }
 
 .stars i {
-    font-size: 12px;
+    font-size: 0.75em;
 }
 
 .stars i:last-of-type {
@@ -299,11 +303,15 @@ fieldset.search-line {
 }
 
 .card--lodging {
-    width: 246px;
+    width: 32%;
+}
+
+.offers-section__popular h2 {
+    margin-right: 15px;
 }
 
 .cards--popular {
-    row-gap: 33px;
+    row-gap: 30px;
 }
 
 .card--popular {
@@ -316,20 +324,18 @@ fieldset.search-line {
 }
 
 .card--popular .card__img {
-    width: 137px;
+    width: 40%;
     height: 144px;
-    border-radius: 20px 0 0 20px;
 }
 
 .card--popular .card__infos {
-    padding-top: 16px;
+    width: 60%;
 }
 
 
 .afficher-plus {
     font-weight: 700;
-    font-size: 18px;
-    line-height: 21px;
+    font-size: 1.125em;
 }
 
 .popular__title {
@@ -344,14 +350,17 @@ fieldset.search-line {
     margin-bottom: 60px;
 }
 
+.activities-section h2 {
+    padding-top: 40px;
+}
+
 .card--activity {
-    width: 302px;
+    width: 23%;
     border: none;
 }
 
 .card--activity .card__link {
     height: 100%;
-    justify-content: flex-start;
 }
 
 .card--activity .card__img {
@@ -362,23 +371,27 @@ fieldset.search-line {
 
 .card--activity h3 {
     padding: 20px;
+    margin: auto 0;
 }
 
 
-/************************ Footer *********************/
+/******************************* Footer *********************************/
 
 .site-footer {
     padding: 45px 70px;
     background: var(--color-grey);
     display: flex;
-    column-gap: 230px;
+    flex-wrap: wrap;
+}
+
+.footer__column {
+    width: 33.3%;
 }
 
 .site-footer h4 {
     padding-bottom: 20px;
     font-weight: 700;
-    font-size: 18px;
-    line-height: 21px;
+    font-size: 1.125em;
 }
 
 .site-footer ul {
@@ -390,4 +403,201 @@ fieldset.search-line {
     padding-bottom: 12px;
 }
 
-/********************* Media Queries *******************/
+/***********************************************************************/
+/****************************** Tablettes ******************************/
+/***********************************************************************/
+
+@media screen and (min-width: 1401px) {
+    body {
+        padding: 0 40px;
+    }
+    
+    .site-header,
+    .site-main,
+    .site-footer {
+        margin: auto;
+    }
+}
+
+@media screen and (max-width: 1290px) and (min-width: 992px) {
+    
+    .card--popular  .card__link {
+       flex-direction: column;
+    }
+
+    .card--popular .card__img,
+    .card--popular .card__infos {
+        width: 100%;
+    }
+
+    .card--popular .card__img {
+        height: 100px;
+        border-radius: 20px 20px 0 0;
+    }
+
+}
+
+@media screen and (max-width: 991px) {
+    
+    .site-header,
+    .site-main,
+    .site-footer {
+        margin: 0 20px;
+    }
+    
+    .filters h2 {
+        margin-right: 10px;
+    }
+
+    .filters ul {
+        column-gap: 10px;
+    }
+    
+    .offers-section {
+        flex-direction: column;
+    }
+
+    .offers-section__lodging, 
+    .offers-section__popular {
+        width: 100%;
+    }
+
+    .card--popular {
+        width: 32%;
+    }
+
+    .card__infos {
+        padding: 8px 6px;
+    }
+
+    .card--popular .card__infos {
+        padding-top: 8px;
+    }
+
+    .card--activity .card__img {
+        height: 211px;
+    }
+
+}
+
+@media screen and (min-width: 768px) {
+    .submit-glass {
+        display: none;
+    }
+}
+
+@media screen and (max-width:767px) {
+    
+    body {
+        padding: 0;
+    }
+
+    .site-header,
+    .site-main,
+    .site-footer {
+        margin: 0;
+    }
+
+    .site-header {
+        flex-direction: column;
+    }
+
+    .logo {
+        margin: 20px auto;
+    }
+
+    nav {
+        width: 100%;
+    }
+
+    nav ul {
+        width: 100%;
+        padding: 0;
+        column-gap: 0;
+    }
+
+    nav li {
+        width: 50%;
+        padding: 25px 0;
+        text-align: center;
+        border-top: none;
+        border-bottom: solid 2px transparent;
+    }
+
+    .search-section {
+        padding: 0 20px;
+    }
+
+    .search-line input {
+        width: 150px;
+        flex-grow: 1;
+        font-size: 1em;
+    }
+
+    .filters ul {
+        justify-content: center;
+    }
+
+    .filters li {
+        width: 48%;
+    }
+
+    .offers-section {
+        flex-direction: column-reverse;
+        margin-bottom: 0;
+    }
+
+    .offers-section__lodging,
+    .offers-section__popular {
+        border-radius: 0;
+        padding: 40px 20px;
+    }
+
+    .offers-section__lodging {
+        background: #fff;
+    }
+
+    .activities-section {
+        margin-bottom: 80px;
+        padding: 0 20px;
+    }
+
+    h1 {
+        margin: 30px 0 13px 0;
+    }
+    
+    .submit-word {
+        display: none;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .site-footer {
+        flex-direction: column;
+        row-gap: 40px;
+        padding: 45px 20px;
+    }
+
+    .footer__column {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    
+    .filters ul {
+        align-items: stretch;
+    }
+    
+    .filters li {
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .filters p {
+        font-size: .9em;
+        text-align: center;
+    }
+}
